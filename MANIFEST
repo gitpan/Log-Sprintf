@@ -1,0 +1,11 @@
+Changes
+LICENSE
+MANIFEST
+META.json
+Makefile.PL
+README
+dist.ini
+lib/Log/Sprintf.pm
+t/basic.t
+t/override.t
+t/release-pod-syntax.t
