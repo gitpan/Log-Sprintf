@@ -1,6 +1,6 @@
 package Log::Sprintf;
 BEGIN {
-  $Log::Sprintf::VERSION = '0.001000';
+  $Log::Sprintf::VERSION = '0.001001';
 }
 
 # ABSTRACT: Format strings the way Log::log4perl does, without all the weight
@@ -10,7 +10,6 @@ use warnings;
 
 use String::Formatter;
 use syntax 'junction';
-use POSIX 'strftime';
 
 my %codes = (
   C => 'package',
@@ -71,7 +70,12 @@ sub _codes { return { %codes, %{$_[0]->codes} } }
 
 sub date {
    die 'you forgot to pass date' unless exists $_[0]->{date};
-   strftime('%F %T', @{$_[0]->{date}})
+
+   my @date = @{$_[0]->{date}};
+   splice @date, 6, 3;
+   $date[-1] += 1900;
+   $date[-2]++;
+   CORE::sprintf '%04i-%02i-%02i %02i:%02i:%02i', reverse @date
 }
 
 sub message {
@@ -126,7 +130,7 @@ Log::Sprintf - Format strings the way Log::log4perl does, without all the weight
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 

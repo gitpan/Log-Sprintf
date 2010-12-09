@@ -3,7 +3,7 @@ NAME
     the weight
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
      my $log_formatter = Log::Sprintf->new({
