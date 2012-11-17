@@ -3,7 +3,7 @@ NAME
     the weight
 
 VERSION
-    version 0.001001
+    version 0.001002
 
 SYNOPSIS
      my $log_formatter = Log::Sprintf->new({
@@ -233,7 +233,7 @@ AUTHOR
     Arthur Axel "fREW" Schmidt <frioux+cpan@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2010 by Arthur Axel "fREW" Schmidt.
+    This software is copyright (c) 2012 by Arthur Axel "fREW" Schmidt.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
